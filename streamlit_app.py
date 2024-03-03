@@ -107,6 +107,7 @@ with col2:
 # Warningの非表示
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
+#### ---- #### ---- ####
 # グラフを描画する
 def plot_graph():
     x = np.linspace(0, 10, 100)
@@ -117,3 +118,100 @@ def plot_graph():
 # グラフを表示するボタンを表示する
 if st.button('Plot graph'):
     plot_graph()
+
+#### ---- #### ---- ####
+# データ生成
+x = np.linspace(0, 10, 100)
+y = x + np.random.randn(100) 
+
+# プロット
+plt.plot(x, y, label="test")
+
+# 凡例の表示
+plt.legend()
+
+# プロット表示(設定の反映)
+plt.show()
+
+#### ---- #### ---- ####
+# データ生成
+x = np.linspace(0, 10, 100)
+y = x + np.random.randn(100) 
+
+# Figureの初期化
+fig = plt.figure(figsize=(12, 8)) #...1
+
+# Figure内にAxesを追加()
+ax = fig.add_subplot(111) #...2
+ax.plot(x, y, label="test") #...3
+
+# 凡例の表示
+plt.legend()
+
+# プロット表示(設定の反映)
+plt.show()
+
+#### ---- #### ---- ####
+# データ生成
+x = np.linspace(0, 10, 100)
+y = x + np.random.randn(100) 
+
+# Figureの初期化
+fig = plt.figure(figsize=(12, 8))
+
+# Figure内にAxesを追加
+ax = fig.add_axes([0,0,1,1])
+ax.plot(x, y, label="test")
+
+# 凡例の表示
+plt.legend()
+
+# プロット表示(設定の反映)
+plt.show()
+# データ生成
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.cos(x)
+
+# プロット領域(Figure, Axes)の初期化
+fig = plt.figure(figsize=(12, 8))
+ax1 = fig.add_subplot(131)
+ax2 = fig.add_subplot(132)
+ax3 = fig.add_subplot(133)
+
+# 棒グラフの作成
+ax1.bar([1,2,3],[3,4,5])
+ax2.barh([0.5,1,2.5],[0,1,2])
+ax3.scatter(y1, y2)
+
+# 水平線、垂直線を入れる
+ax3.axhline(0.45)
+ax3.axvline(0.65)
+
+plt.show()
+
+#### ---- #### ---- ####
+# プロット領域の初期化(今回は1行2列の配列)
+fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 8))
+
+# データのプロット
+ax1.bar([1,2,3], [3,4,5])
+ax2.barh([0.5, 1, 2.5], [0,1,2])
+
+plt.show()
+
+#### ---- #### ---- ####
+x = np.linspace(0, 100, 101)
+y = np.random.randn(101)
+
+plt.plot(x, y, color=(0,0,1))
+
+plt.show()
+
+#### ---- #### ---- ####
+x = np.linspace(0, 100, 101)
+y = np.random.randn(101)
+
+plt.plot(x, y, color="#0F0F0F")
+
+plt.show()
