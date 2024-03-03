@@ -1,7 +1,4 @@
 import streamlit as st
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 
 input_num = st.number_input('Input a number', value=0)
 
@@ -83,6 +80,8 @@ elif choice == "Option 2":
 else:
     st.write("You selected Option 3")
 
+import pandas as pd
+
 # ダミーデータの作成
 df = pd.DataFrame({
     'name': ['Alice', 'Bob'],
@@ -104,6 +103,9 @@ with col2:
     # DataFrameを表示
     st.write(df)
 
+import numpy as np
+import matplotlib.pyplot as plt
+
 # Warningの非表示
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
@@ -117,4 +119,3 @@ def plot_graph():
 # グラフを表示するボタンを表示する
 if st.button('Plot graph'):
     plot_graph()
-
