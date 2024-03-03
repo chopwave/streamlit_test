@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 input_num = st.number_input('Input a number', value=0)
 
@@ -79,8 +80,6 @@ elif choice == "Option 2":
     st.write("You selected Option 2")
 else:
     st.write("You selected Option 3")
-
-import pandas as pd
 
 # ダミーデータの作成
 df = pd.DataFrame({
